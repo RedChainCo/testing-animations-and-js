@@ -1,0 +1,76 @@
+:root{
+    --bgColor: hsl(0, 0%, 15%);
+}
+*{
+    font-family: sans-serif;
+    text-transform: capitalize;
+}
+body{
+    background: var(--bgColor);
+    font-family: sans-serif;
+    color: white;
+    max-width: 800px;
+    margin: auto;
+}
+h1{
+    background: linear-gradient(53deg,yellow 0%, orange 10%,red 30%, purple 40%, #28a6e0 50%, lime 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3em;
+    display: block;
+}
+input{
+    background: white;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    border: 0;
+    margin-bottom: 0.5em;
+}
+input:hover{
+    color: black;
+    font-weight: 500;
+    font-size: 1em;
+    background-color: hsl(0, 0%, 95%);
+    transition: font-size 250ms linear;
+    animation-name: separate;
+    animation:1s 4 ease;
+}
+.highlight{
+    animation-name: size;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    /* animation-delay: 1.5s; */
+}
+.images{
+    border-radius: 1em;
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+}
+@keyframes size{
+    from {font-size: 1.5em; color: var(--bgColor); line-height: 1em;}
+    to {font-size: 1em; color: white; line-height: 1.5em;}
+}
+@media all and (max-width: 800px) {
+    body{
+        padding: 0 1em;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    input{
+        display: block;
+        min-width: 250px;
+        padding: 1em;
+    }
+    .images{
+        opacity: .1;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        z-index: -10;
+    }
+}
